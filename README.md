@@ -21,7 +21,6 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_eip.bastion-eip](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip) | resource |
-| [aws_eip.gitlab-3k-eip](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip) | resource |
 | [aws_eip_association.bastion-eip-assoc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip_association) | resource |
 | [aws_instance.bastion-instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
 | [aws_internet_gateway.bastion-gw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway) | resource |
@@ -40,6 +39,8 @@ No modules.
 | <a name="input_instance_ingress_rules"></a> [instance\_ingress\_rules](#input\_instance\_ingress\_rules) | n/a | <pre>list(object({<br/>    from_port   = number<br/>    to_port     = number<br/>    protocol    = string<br/>    cidr_blocks = list(string)<br/>  }))</pre> | <pre>[<br/>  {<br/>    "cidr_blocks": [<br/>      "0.0.0.0/0"<br/>    ],<br/>    "from_port": 22,<br/>    "protocol": "tcp",<br/>    "to_port": 22<br/>  }<br/>]</pre> | no |
 | <a name="input_instance_key_pair"></a> [instance\_key\_pair](#input\_instance\_key\_pair) | n/a | <pre>object({<br/>    name           = string<br/>    public_ssh_key = string<br/>  })</pre> | <pre>{<br/>  "name": "admin",<br/>  "public_ssh_key": "./key.pub"<br/>}</pre> | no |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"eu-west-1"` | no |
+| <a name="input_subnet_availability_zone"></a> [subnet\_availability\_zone](#input\_subnet\_availability\_zone) | n/a | `string` | `"eu-west-1a"` | no |
+| <a name="input_vpc_cidr_block"></a> [vpc\_cidr\_block](#input\_vpc\_cidr\_block) | n/a | `string` | `"10.0.0.0/16"` | no |
 
 ## Outputs
 
