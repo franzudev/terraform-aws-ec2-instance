@@ -1,5 +1,5 @@
 resource "aws_vpc" "bastion-vpc" {
-  cidr_block           = "10.0.0.0/16"
+  cidr_block           = var.vpc_cidr_block
   enable_dns_hostnames = true
   enable_dns_support   = true
 }
@@ -7,7 +7,7 @@ resource "aws_vpc" "bastion-vpc" {
 resource "aws_subnet" "bastion-subnet" {
   cidr_block        = cidrsubnet(aws_vpc.bastion-vpc.cidr_block, 9, 1)
   vpc_id            = aws_vpc.bastion-vpc.id
-  availability_zone = "eu-west-1a"
+  availability_zone = var.subnet_availability_zone
 }
 
 resource "aws_internet_gateway" "bastion-gw" {
@@ -35,8 +35,4 @@ resource "aws_eip" "bastion-eip" {
 resource "aws_eip_association" "bastion-eip-assoc" {
   instance_id   = aws_instance.bastion-instance.id
   allocation_id = aws_eip.bastion-eip.allocation_id
-}
-
-resource "aws_eip" "gitlab-3k-eip" {
-  domain = "vpc"
 }
