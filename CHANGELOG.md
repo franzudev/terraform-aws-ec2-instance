@@ -1,3 +1,9 @@
+## 0.1.2 (2024-10-26)
+
+### Refactor
+
+- update instances with variables
+
 ## 0.1.1 (2024-10-26)
 
 ### Fix
