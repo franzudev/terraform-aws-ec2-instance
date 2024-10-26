@@ -1,5 +1,6 @@
 default_install_hook_types:
   - pre-commit
+  - post-commit
   - pre-push
 repos:
   - hooks:
@@ -18,9 +19,12 @@ repos:
     hooks:
       - id: commitizen-changelog
         name: commitizen-changelog
-        entry: bash -c 'cz bump --changelog'
+        entry: cz
+        args:
+          - bump
+          - --changelog
         language: system
-        types: [ shell ]
         pass_filenames: false
+        always_run: true
         stages:
-          - pre-commit
+          - pre-push
