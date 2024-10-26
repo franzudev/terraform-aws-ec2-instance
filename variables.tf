@@ -13,6 +13,17 @@ variable "subnet_availability_zone" {
   default = "eu-west-1a"
 }
 
+variable "instance" {
+  type = object({
+    ami_id = string
+    type   = string
+  })
+  default = {
+    ami_id = "ami-02f64c390601e5f36"
+    type   = "c5.large"
+  }
+}
+
 variable "instance_key_pair" {
   type = object({
     name           = string
