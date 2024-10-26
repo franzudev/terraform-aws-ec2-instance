@@ -14,3 +14,13 @@ repos:
       - id: commitizen
     repo: https://github.com/commitizen-tools/commitizen
     rev: v3.30.0
+  - repo: local
+    hooks:
+      - id: commitizen-changelog
+        name: commitizen-changelog
+        entry: bash -c 'cz bump --changelog'
+        language: system
+        types: [ shell ]
+        pass_filenames: false
+        stages:
+          - pre-commit
