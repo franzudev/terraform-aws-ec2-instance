@@ -35,17 +35,17 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_instance"></a> [instance](#input\_instance) | n/a | <pre>object({<br/>    ami_id = string<br/>    type   = string<br/>  })</pre> | <pre>{<br/>  "ami_id": "ami-02f64c390601e5f36",<br/>  "type": "c5.large"<br/>}</pre> | no |
-| <a name="input_instance_egress_rules"></a> [instance\_egress\_rules](#input\_instance\_egress\_rules) | n/a | <pre>list(object({<br/>    from_port   = number<br/>    to_port     = number<br/>    protocol    = string<br/>    cidr_blocks = list(string)<br/>  }))</pre> | <pre>[<br/>  {<br/>    "cidr_blocks": [<br/>      "0.0.0.0/0"<br/>    ],<br/>    "from_port": 0,<br/>    "protocol": "-1",<br/>    "to_port": 0<br/>  }<br/>]</pre> | no |
-| <a name="input_instance_ingress_rules"></a> [instance\_ingress\_rules](#input\_instance\_ingress\_rules) | n/a | <pre>list(object({<br/>    from_port   = number<br/>    to_port     = number<br/>    protocol    = string<br/>    cidr_blocks = list(string)<br/>  }))</pre> | <pre>[<br/>  {<br/>    "cidr_blocks": [<br/>      "0.0.0.0/0"<br/>    ],<br/>    "from_port": 22,<br/>    "protocol": "tcp",<br/>    "to_port": 22<br/>  }<br/>]</pre> | no |
-| <a name="input_instance_key_pair"></a> [instance\_key\_pair](#input\_instance\_key\_pair) | n/a | <pre>object({<br/>    name           = string<br/>    public_ssh_key = string<br/>  })</pre> | <pre>{<br/>  "name": "admin",<br/>  "public_ssh_key": "./key.pub"<br/>}</pre> | no |
-| <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"eu-west-1"` | no |
-| <a name="input_subnet_availability_zone"></a> [subnet\_availability\_zone](#input\_subnet\_availability\_zone) | n/a | `string` | `"eu-west-1a"` | no |
-| <a name="input_vpc_cidr_block"></a> [vpc\_cidr\_block](#input\_vpc\_cidr\_block) | n/a | `string` | `"10.0.0.0/16"` | no |
+| <a name="input_instance"></a> [instance](#input\_instance) | The AMI ID and the instance type to use | <pre>object({<br/>    ami_id = string<br/>    type   = string<br/>  })</pre> | <pre>{<br/>  "ami_id": "ami-02f64c390601e5f36",<br/>  "type": "c5.large"<br/>}</pre> | no |
+| <a name="input_instance_egress_rules"></a> [instance\_egress\_rules](#input\_instance\_egress\_rules) | List of egress' rules for the instance | <pre>list(object({<br/>    from_port   = number<br/>    to_port     = number<br/>    protocol    = string<br/>    cidr_blocks = list(string)<br/>  }))</pre> | <pre>[<br/>  {<br/>    "cidr_blocks": [<br/>      "0.0.0.0/0"<br/>    ],<br/>    "from_port": 0,<br/>    "protocol": "-1",<br/>    "to_port": 0<br/>  }<br/>]</pre> | no |
+| <a name="input_instance_ingress_rules"></a> [instance\_ingress\_rules](#input\_instance\_ingress\_rules) | List of ingress' rules for the instance | <pre>list(object({<br/>    from_port   = number<br/>    to_port     = number<br/>    protocol    = string<br/>    cidr_blocks = list(string)<br/>  }))</pre> | <pre>[<br/>  {<br/>    "cidr_blocks": [<br/>      "0.0.0.0/0"<br/>    ],<br/>    "from_port": 22,<br/>    "protocol": "tcp",<br/>    "to_port": 22<br/>  }<br/>]</pre> | no |
+| <a name="input_instance_key_pair"></a> [instance\_key\_pair](#input\_instance\_key\_pair) | Generate a keypair for ssh connections | <pre>object({<br/>    name           = string<br/>    public_ssh_key = string<br/>  })</pre> | <pre>{<br/>  "name": "admin",<br/>  "public_ssh_key": "./key.pub"<br/>}</pre> | no |
+| <a name="input_region"></a> [region](#input\_region) | The AWS region where to deploy the resources | `string` | `"eu-west-1"` | no |
+| <a name="input_subnet_availability_zone"></a> [subnet\_availability\_zone](#input\_subnet\_availability\_zone) | The availability zone for the instance's subnet | `string` | `"eu-west-1a"` | no |
+| <a name="input_vpc_cidr_block"></a> [vpc\_cidr\_block](#input\_vpc\_cidr\_block) | VPC's cidr\_block | `string` | `"10.0.0.0/16"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_bastion_id"></a> [bastion\_id](#output\_bastion\_id) | n/a |
+| <a name="output_bastion_id"></a> [bastion\_id](#output\_bastion\_id) | IP of the created instance |
 <!-- END_TF_DOCS -->
