@@ -1,3 +1,9 @@
+## 0.1.3 (2024-10-26)
+
+### Fix
+
+- add post-commit hook
+
 ## 0.1.2 (2024-10-26)
 
 ### Refactor
