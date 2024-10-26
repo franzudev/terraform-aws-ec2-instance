@@ -1,3 +1,10 @@
+## 0.1.4 (2024-10-26)
+
+### Fix
+
+- bp for module publishing
+- add post-commit hook
+
 ## 0.1.3 (2024-10-26)
 
 ### Fix
