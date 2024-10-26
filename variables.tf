@@ -1,16 +1,22 @@
 variable "region" {
   type    = string
   default = "eu-west-1"
+
+  description = "The AWS region where to deploy the resources"
 }
 
 variable "vpc_cidr_block" {
   type    = string
   default = "10.0.0.0/16"
+
+  description = "VPC's cidr_block"
 }
 
 variable "subnet_availability_zone" {
   type    = string
   default = "eu-west-1a"
+
+  description = "The availability zone for the instance's subnet"
 }
 
 variable "instance" {
@@ -22,6 +28,7 @@ variable "instance" {
     ami_id = "ami-02f64c390601e5f36"
     type   = "c5.large"
   }
+  description = "The AMI ID and the instance type to use"
 }
 
 variable "instance_key_pair" {
@@ -33,6 +40,7 @@ variable "instance_key_pair" {
     name           = "admin"
     public_ssh_key = "./key.pub"
   }
+  description = "Generate a keypair for ssh connections"
 }
 
 variable "instance_ingress_rules" {
@@ -51,6 +59,7 @@ variable "instance_ingress_rules" {
       cidr_blocks = ["0.0.0.0/0"]
     }
   ]
+  description = "List of ingress' rules for the instance"
 }
 
 variable "instance_egress_rules" {
@@ -69,4 +78,5 @@ variable "instance_egress_rules" {
       cidr_blocks = ["0.0.0.0/0"]
     }
   ]
+  description = "List of egress' rules for the instance"
 }
