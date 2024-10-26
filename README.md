@@ -35,6 +35,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_instance"></a> [instance](#input\_instance) | n/a | <pre>object({<br/>    ami_id = string<br/>    type   = string<br/>  })</pre> | <pre>{<br/>  "ami_id": "ami-02f64c390601e5f36",<br/>  "type": "c5.large"<br/>}</pre> | no |
 | <a name="input_instance_egress_rules"></a> [instance\_egress\_rules](#input\_instance\_egress\_rules) | n/a | <pre>list(object({<br/>    from_port   = number<br/>    to_port     = number<br/>    protocol    = string<br/>    cidr_blocks = list(string)<br/>  }))</pre> | <pre>[<br/>  {<br/>    "cidr_blocks": [<br/>      "0.0.0.0/0"<br/>    ],<br/>    "from_port": 0,<br/>    "protocol": "-1",<br/>    "to_port": 0<br/>  }<br/>]</pre> | no |
 | <a name="input_instance_ingress_rules"></a> [instance\_ingress\_rules](#input\_instance\_ingress\_rules) | n/a | <pre>list(object({<br/>    from_port   = number<br/>    to_port     = number<br/>    protocol    = string<br/>    cidr_blocks = list(string)<br/>  }))</pre> | <pre>[<br/>  {<br/>    "cidr_blocks": [<br/>      "0.0.0.0/0"<br/>    ],<br/>    "from_port": 22,<br/>    "protocol": "tcp",<br/>    "to_port": 22<br/>  }<br/>]</pre> | no |
 | <a name="input_instance_key_pair"></a> [instance\_key\_pair](#input\_instance\_key\_pair) | n/a | <pre>object({<br/>    name           = string<br/>    public_ssh_key = string<br/>  })</pre> | <pre>{<br/>  "name": "admin",<br/>  "public_ssh_key": "./key.pub"<br/>}</pre> | no |
